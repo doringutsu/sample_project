@@ -1,0 +1,17 @@
+[flake8]
+max-line-length = 120
+exclude =
+    .venv,
+    venv,
+    migrations,
+    *.md,
+    *.pyc,
+    .gitignore,
+    scrapy.cfg,
+    LICENSE,
+    .flake8,
+    settings.py
+
+ignore =
+    E402,
+    W391

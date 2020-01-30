@@ -1,0 +1,6 @@
+*.pyc
+.DS_Store
+venv/
+local_settings.py
+sample_project.egg-info/
+__pycache__/
