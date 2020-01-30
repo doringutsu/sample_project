@@ -1,4 +1,5 @@
 # Just a sample Python project
+[![CircleCI](https://circleci.com/gh/doringutsu/sample_project.svg?style=svg)](https://circleci.com/gh/doringutsu/sample_project)
 
 ## :hotsprings: Dependencies
 * [Python 3.7.2](https://www.python.org/downloads/release/python-360/)
