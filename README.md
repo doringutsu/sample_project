@@ -8,24 +8,31 @@
 
 ## Development
 
-### :construction: Steps to launch the development environment:
+### :hammer: Basic setup
+
+In order to easily work with the project, you have to create a virtual environment where you will keep the installed packages.
+To do so:
 1. `python3 -m venv venv`
 2. `source venv/bin/activate`
 3. `pip install -r requirements.txt`
 4. `pip install -r requirements.dev.txt`
-5. create your local_settings.py file with actual connection parameters
-6. `sample_project psql-db create`
-7. `alembic upgrade head`
-8. `sample_project flask-server start`
+
+After you have installed all dependencies, you can move forward to `development` and `testing`
+
+### :construction: Steps to launch the development environment:
+1. create your local_settings.py file with actual connection parameters
+2. `sample_project psql-db create`
+3. `alembic upgrade head`
+4. `sample_project flask-server start`
 
 
 ### :vertical_traffic_light: Steps to run tests:
-1. `python3 -m venv venv`
-2. `source venv/bin/activate`
-3. `pip install -r requirements.txt`
-4. `pip install -r requirements.dev.txt`
-5. `pytest`
+1. `pytest`
 
 
 ### :globe_with_meridians: Steps to launch on production environment:
 1. Coming later
+
+
+### :books: Available commands
+To find out the available commands, use `sample_project --help`
