@@ -1,0 +1,39 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/sample_project
+
+    docker:
+    - image: circleci/python:3.7
+
+    steps:
+    - checkout
+
+    - restore-cache:
+        key: deps-{{ checksum "requirements.txt" }}-{{ checksum "requirements.dev.txt" }}
+
+    - run:
+        command: |
+          python3 -m venv venv
+          . venv/bin/activate
+          pip install -r requirements.txt
+          pip install -r requirements.dev.txt
+
+    - run:
+        name: Run flake8
+        command: |
+          . venv/bin/activate
+          flake8 sample_project --output-file flake8-test-reports
+
+    - save_cache:
+        key: deps-{{ checksum "requirements.txt" }}-{{ checksum "requirements.dev.txt" }}
+        paths:
+          - "venv"
+
+    # Save artifacts
+    - store_artifacts:
+        path: /tmp/circleci-artifacts
+
+    - store_artifacts:
+        path: flake8-test-reports
+        destination: flake8-test-reports
